@@ -19,9 +19,11 @@ import { AutogenerateComponent } from './autogenerate/autogenerate.component';
 import { MatTabsModule, MatCardModule, MatTabNav, MatTabContent, MatDialogModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {IdeaViewComponent} from "./idea-view/idea-view.component"
+import {IdeaViewComponent} from "./idea-view/idea-view.component";
 import {  MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule} from '@angular/material';
 import { IdeaViewService } from './idea-view.service';
+import { IdeaServiceComponent} from "./idea-service/idea-service.component";
+import { IdeahamsterService } from './ideahamster.service';
 
 
 const config = new AuthServiceConfig([
@@ -45,7 +47,8 @@ export function provideConfig() {
     AutogenerateComponent,
     IdeaViewComponent,
     SignupComponent,
-    ServiceProviderProfileComponent
+    ServiceProviderProfileComponent,
+   IdeaServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ export function provideConfig() {
       provide: AuthServiceConfig,
       useFactory: provideConfig,
     },
-    IdeaViewService
+    IdeaViewService,
+    IdeahamsterService
   ],
   bootstrap: [AppComponent]
 })

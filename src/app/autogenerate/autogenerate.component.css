@@ -29,3 +29,7 @@
     background-size: cover;
   }
 
+  .close{
+    float: right;
+  }
+
